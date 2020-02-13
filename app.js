@@ -299,9 +299,10 @@ const App = (function(ItemCtrl, UICtrl, StorageCtrl) {
       .addEventListener('click', itemUpdateSubmit)
 
     //  Back item event
-    document
-      .querySelector(UISelectors.backBtn)
-      .addEventListener('click', UICtrl.clearEditState)
+    document.querySelector(UISelectors.backBtn).addEventListener('click', e => {
+      e.preventDefault()
+      UICtrl.clearEditState()
+    })
 
     //  Delete item event
     document
